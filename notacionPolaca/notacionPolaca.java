@@ -1,63 +1,19 @@
-package noPolaca;
+package notacionPolaca;
 
 import java.util.Scanner;
 
-class Nodo {
-    char dato;
-    Nodo siguiente;
-
-    Nodo(char dato) {
-        this.dato = dato;
-        this.siguiente = null;
-    }
-}
-
-class Pila {
-    Nodo cabeza;
-
-    Pila() {
-        this.cabeza = null;
-    }
-
-    void push(char dato) {
-        Nodo nuevoNodo = new Nodo(dato);
-        nuevoNodo.siguiente = cabeza;
-        cabeza = nuevoNodo;
-    }
-
-    char pop() {
-        if (cabeza == null)
-            throw new IllegalStateException("La pila está vacía");
-        
-        char dato = cabeza.dato;
-        cabeza = cabeza.siguiente;
-        return dato;
-    }
-
-    char peek() {
-        if (cabeza == null)
-            throw new IllegalStateException("La pila está vacía");
-        
-        return cabeza.dato;
-    }
-
-    boolean isEmpty() {
-        return cabeza == null;
-    }
-}
-
-public class InfixToPrefix {
+public class notacionPolaca {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         System.out.println("Ingrese la expresión en notación infija:");
-        String expresionInfija = scanner.nextLine();
+        String expresionInfija = input.nextLine();
 
         String expresionPolaca = convertirAnotacionPolaca(expresionInfija);
 
         System.out.println("La expresión en notación polaca es: " + expresionPolaca);
 
-        scanner.close();
+        input.close();
     }
 
     public static String convertirAnotacionPolaca(String expresionInfija) {
