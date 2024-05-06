@@ -17,7 +17,7 @@ public class notacionPolaca {
     }
 
     public static String convertirAnotacionPolaca(String expresionInfija) {
-        StringBuilder expresionPolaca = new StringBuilder();
+        StringBuilder expresionPolaca = new StringBuilder(); // crea y manipula la cadena de caracteres
         Pila pila = new Pila();
 
         for (int i = expresionInfija.length() - 1; i >= 0; i--) {
