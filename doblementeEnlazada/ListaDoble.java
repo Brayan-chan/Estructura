@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class ListaDoble {
     static Scanner input = new Scanner(System.in);
-    
 
     public class ListaDoblementeEnlazada {
         private Nodo lista;
